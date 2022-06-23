@@ -18,16 +18,16 @@ import java.util.Scanner;
  */
 public class Status {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
-    {
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the user status code (zero,one,two,three) in string");
-    String code = in.next();
-    StausUser t= new StausUser();
-    t.statusDetail(code); 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the user status code (ZERO, ONE, TWO, THREE):");
+
+       
+        String input = scanner.next().toUpperCase();
+
+        UserStatus status = UserStatus.getStatusByCode(input);
+
+        StatusUser statusUser = new StatusUser();
+        statusUser.printStatus(status);
     }
-    
 }
